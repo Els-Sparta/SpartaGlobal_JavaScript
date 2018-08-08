@@ -54,11 +54,13 @@ else if(calc_choice=="i"){
 // // Using switch to differentiate between the different units
   switch (operator) {
     case "m":
+// Give the user a prompt to give the calculator an input for weight in kg and height in m
       var weight = parseFloat(prompt("Enter your weight in kg", "0"));
       var height = parseFloat(prompt("Enter your height in m", "0"));
       var metric_bmi_function = (weight/height) / height;
       alert(metric_bmi_function);
       break;
+// Give the user a prompt to give the calculator an input for weight in pounds and height in inches
     case "i":
       weight = parseFloat(prompt("Enter your weight in pounds", "0"));
       height = parseFloat(prompt("Enter your weight in inches", "0"));
@@ -72,19 +74,22 @@ else if(calc_choice=="i"){
 // if the input is "t" the trip calculator prompt is run
 else if(calc_choice=="t"){
   alert("Trip Calculator");
+// Ask the user to provide details of distance, fuel efficiency, cost/gallon and average speed.
   var distance = parseFloat(prompt("Enter the distance of the trip in miles", "0"))
   var fuel_efficiency = parseFloat(prompt("Enter your cars MPG", "0"))
-  var cost_per_gallon = parseFloat(prompt("Enter the cost of fuel per gallon", "0"))
+  var cost_per_gallon = parseFloat(prompt("Enter the cost of fuel per gallon in pounds", "0"))
   var average_speed = parseFloat(prompt("Enter your average speed for the trip in m/h"))
-
+// Function for working out the time the trip would take
   function time() {
+// Time = The distance travelled * the average speed maintained during a trip
     time_result = distance / average_speed;
     return time_result.toFixed(2);
   }
   function price(){
+// Price = (the distance travelled / by the fuel efficiency of the car) * cost of a gallon in pounds
     price_result= (distance / fuel_efficiency) * cost_per_gallon;
     return price_result.toFixed(2);
   }
-
+// Tell the user in one message the time taken for the trip in hours and the cost of the trip in pounds
   alert("The time taken for the trip in hours: " + time() + "\n" + " The cost of the trip in £: " + price());
 }
