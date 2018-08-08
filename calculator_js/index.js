@@ -49,17 +49,19 @@ else if(calc_choice=="a"){
 // if the input is "i" the BMT calculator prompt is run
 else if(calc_choice=="i"){
   alert("BMI Calculator");
+// Give the user an option to choose from metric or imperial
   operator=prompt("Would you like to use (m)etric or (i)mperial")
+// // Using switch to differentiate between the different units
   switch (operator) {
     case "m":
-      var weight = parseFloat(prompt("Enter your weight in kg"));
-      var height = parseFloat(prompt("Enter your height in m"));
+      var weight = parseFloat(prompt("Enter your weight in kg", "0"));
+      var height = parseFloat(prompt("Enter your height in m", "0"));
       var metric_bmi_function = (weight/height) / height;
       alert(metric_bmi_function);
       break;
     case "i":
-      weight = parseFloat(prompt("Enter your weight in pounds"));
-      height = parseFloat(prompt("Enter your weight in inches"));
+      weight = parseFloat(prompt("Enter your weight in pounds", "0"));
+      height = parseFloat(prompt("Enter your weight in inches", "0"));
       var imperial_bmi_function = ((weight * 703)/height)/height;
       alert(imperial_bmi_function);
       break;
@@ -70,4 +72,16 @@ else if(calc_choice=="i"){
 // if the input is "t" the trip calculator prompt is run
 else if(calc_choice=="t"){
   alert("Trip Calculator");
+  var distance = parseFloat(prompt("Enter the distance of the trip in miles", "0"))
+  var fuel_efficiency = parseFloat(prompt("Enter your cars MPG", "0"))
+  var cost_per_gallon = parseFloat(prompt("Enter the cost of fuel per gallon", "0"))
+  var average_speed = parseFloat(prompt("Enter your average speed for the trip in m/h"))
+
+  function time() {
+    time_result = distance / average_speed;
+    return time_result;
+  }
+
+  alert("The time taken for the trip", time());
+  alert("The cost of the trip", price());
 }
