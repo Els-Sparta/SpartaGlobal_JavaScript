@@ -79,9 +79,12 @@ else if(calc_choice=="t"){
 
   function time() {
     time_result = distance / average_speed;
-    return time_result;
+    return time_result.toFixed(2);
+  }
+  function price(){
+    price_result= (distance / fuel_efficiency) * cost_per_gallon;
+    return price_result.toFixed(2);
   }
 
-  alert("The time taken for the trip", time());
-  alert("The cost of the trip", price());
+  alert("The time taken for the trip in hours: " + time() + "\n" + " The cost of the trip in £: " + price());
 }
