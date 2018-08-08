@@ -30,9 +30,9 @@ if(calc_choice=="b"){
 else if(calc_choice=="a"){
   alert("Advanced Calculator");
 // Asking the user if they would like to use the Power / Square root funtion
-  var adv_operator=prompt("Would you like the (p)ower or (s)quare root of initial input");
+  operator=prompt("Would you like the (p)ower or (s)quare root of initial input");
 // Using switch to differentiate between the different operators
-  switch (adv_operator) {
+  switch (operator) {
     case "p":
       num1=parseInt(prompt("Enter a value", "0"));
       num2=parseInt(prompt("Enter a value", "0"));
@@ -49,6 +49,23 @@ else if(calc_choice=="a"){
 // if the input is "i" the BMT calculator prompt is run
 else if(calc_choice=="i"){
   alert("BMI Calculator");
+  operator=prompt("Would you like to use (m)etric or (i)mperial")
+  switch (operator) {
+    case "m":
+      var weight = parseFloat(prompt("Enter your weight in kg"));
+      var height = parseFloat(prompt("Enter your height in m"));
+      var metric_bmi_function = (weight/height) / height;
+      alert(metric_bmi_function);
+      break;
+    case "i":
+      weight = parseFloat(prompt("Enter your weight in pounds"));
+      height = parseFloat(prompt("Enter your weight in inches"));
+      var imperial_bmi_function = ((weight * 703)/height)/height;
+      alert(imperial_bmi_function);
+      break;
+    default:
+      alert("Incorrect input")
+  }
 }
 // if the input is "t" the trip calculator prompt is run
 else if(calc_choice=="t"){
